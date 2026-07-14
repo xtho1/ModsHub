@@ -43,7 +43,7 @@
 
 /* Mobile-only refinements */
 @media(max-width:767px){
-  .section-shell,.site-header{width:min(100% - 32px,1160px)}
+  .section-shell,.site-header{width:calc(100% - 32px);max-width:100%}
   .site-header{height:68px}
   .header-cta{padding:8px 11px}
   .hero{grid-template-columns:1fr;min-height:auto;padding:26px 0 42px;gap:4px;text-align:center}
@@ -73,7 +73,7 @@
 }
 
 @media(max-width:480px){
-  .section-shell,.site-header{width:min(100% - 28px,1160px)}
+  .section-shell,.site-header{width:calc(100% - 28px);max-width:100%}
   .site-header{height:64px}
   .brand{gap:8px;font-size:17px}.brand-mark{width:27px;height:27px}
   .header-cta{font-size:12px;padding:8px 9px}.header-cta span{display:none}
@@ -112,4 +112,24 @@
   .site-header{width:calc(100% - 24px)}
   .brand{gap:12px;font-size:17px}
   .brand-mark{width:18px;height:18px;flex-basis:18px}
+}
+
+/* Viewport-safe responsive containment */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+img{max-width:100%}
+.section-shell,.site-header{max-width:100%}
+
+@media(max-width:767px){
+  .section-shell,.site-header{width:calc(100% - 32px);max-width:calc(100% - 32px)}
+  .hero,.hero-copy,.hero-visual,.section-heading,.game-grid,.game-card,.game-content{min-width:0;max-width:100%}
+  .hero-copy{margin-inline:auto}
+  .hero-visual{overflow:hidden}
+  .section-heading{gap:12px}
+  .section-heading>div{min-width:0}
+  .text-link{flex:0 0 auto;text-align:right;white-space:nowrap}
+}
+
+@media(max-width:480px){
+  .section-shell{width:calc(100% - 28px);max-width:calc(100% - 28px)}
+  .site-header{width:calc(100% - 24px);max-width:calc(100% - 24px)}
 }
