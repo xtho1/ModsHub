@@ -1,4 +1,4 @@
-const CONTENT_LOCKER_URL = "https://YOUR_CONTENT_LOCKER_LINK";
+const CONTENT_LOCKER_URL = "https://appsave.space/cl/i/4orjw1";
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('year').textContent = new Date().getFullYear();
